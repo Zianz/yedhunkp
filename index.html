@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yedhun K P | Photographer & Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #007AFF;
+      --primary-light: rgba(0, 122, 255, 0.1);
+      --accent-1: #FF2D55;
+      --accent-2: #5856D6;
+      --accent-3: #FF9500;
+      --accent-4: #34C759;
+      --text-primary: #1D1D1F;
+      --text-secondary: #86868B;
+      --text-tertiary: #AEAEB2;
+      --background: #FFFFFF;
+      --background-alt: #F5F5F7;
+      --border: #E5E5E7;
+      --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+      --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--background);
+      color: var(--text-primary);
+      line-height: 1.6;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent-1), var(--accent-2));
+      border-radius: 3px;
+    }
+
+    nav {
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 6rem 0 4rem;
+      text-align: center;
+      background: linear-gradient(135deg, #f0f7ff 0%, #f9f0ff 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 10% 20%, rgba(0, 122, 255, 0.08) 0%, transparent 20%),
+        radial-gradient(circle at 90% 30%, rgba(255, 45, 85, 0.06) 0%, transparent 20%),
+        radial-gradient(circle at 50% 80%, rgba(88, 86, 214, 0.05) 0%, transparent 20%);
+    }
+
+    .profile-pic {
+      width: 9rem;
+      height: 9rem;
+      border-radius: 50%;
+      margin: 0 auto 1.5rem;
+      overflow: hidden;
+      border: 3px solid white;
+      box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.8);
+      transition: var(--transition);
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile-pic::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(135deg, var(--primary), var(--accent-1), var(--accent-2));
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0.7;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05) rotate(3deg);
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, var(--text-primary), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+      position: relative;
+      display: inline-block;
+    }
+
+    .subtitle::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 10%;
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-info span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-align: center;
+      letter-spacing: -0.5px;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent-1));
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      font-weight: 400;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--background);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary), var(--accent-2));
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .card:hover::before {
+      width: 8px;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary);
+    }
+
+    .card p {
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .card small {
+      color: var(--text-tertiary);
+      font-size: 0.875rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Lists */
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .bullet {
+      color: var(--primary);
+      font-weight: bold;
+      margin-right: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 0.125rem;
+    }
+
+    /* Portfolio */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 122, 255, 0.2), rgba(255, 45, 85, 0.2));
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 1;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-item:hover::before {
+      opacity: 1;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Skills */
+    .skill-list li {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .language-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .language-item strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: var(--transition);
+    }
+
+    .dot.filled {
+      background: var(--primary);
+    }
+
+    /* Button */
+    .btn {
+      background: linear-gradient(135deg, var(--primary), var(--accent-2));
+      color: white;
+      font-weight: 500;
+      border: none;
+      padding: 0.875rem 2rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: var(--transition);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 122, 255, 0.4);
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    /* Colorful elements */
+    .color-dot {
+      position: absolute;
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    .dot-1 {
+      width: 200px;
+      height: 200px;
+      background: var(--primary);
+      top: 10%;
+      left: 5%;
+    }
+
+    .dot-2 {
+      width: 150px;
+      height: 150px;
+      background: var(--accent-1);
+      bottom: 20%;
+      right: 10%;
+    }
+
+    .dot-3 {
+      width: 100px;
+      height: 100px;
+      background: var(--accent-2);
+      top: 40%;
+      right: 15%;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      background: linear-gradient(135deg, var(--background-alt), #e8e8ed);
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-4));
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .floating {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      nav {
+        display: none;
+      }
+      
+      .contact-info {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      
+      section {
+        padding: 3rem 0;
+      }
+      
+      .color-dot {
+        display: none;
+      }
+    }
+
+    /* Dark mode support */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary: #0A84FF;
+        --text-primary: #F5F5F7;
+        --text-secondary: #AEAEB2;
+        --text-tertiary: #636366;
+        --background: #000000;
+        --background-alt: #1C1C1E;
+        --border: #38383A;
+      }
+      
+      .hero {
+        background: linear-gradient(135deg, #0a0a14 0%, #1a0a1a 100%);
+      }
+      
+      footer {
+        background: linear-gradient(135deg, var(--background-alt), #0a0a0a);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-content">
+    <a href="#" class="logo">Yedhun K P</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="color-dot dot-1 floating"></div>
+  <div class="color-dot dot-2 floating" style="animation-delay: 1s;"></div>
+  <div class="color-dot dot-3 floating" style="animation-delay: 2s;"></div>
+  
+  <div class="container">
+    <div class="profile-pic fade-in">
+      <img src="yedhun-profile.jpg" alt="Yedhun K P">
+    </div>
+    <h1 class="fade-in">Yedhun K P</h1>
+    <p class="subtitle fade-in">Graphic Designer | Professional Photographer | Videographer</p>
+    <div class="contact-info fade-in">
+      <span>📍 MDHUNAM, Kanjyil, Thrikaripur, Kasaragod</span>
+      <span>📧 yedhunkp@gmail.com</span>
+      <span>☎️ +91 70122 58215</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="color-dot dot-1" style="top: 20%; left: 80%; background: var(--accent-3);"></div>
+  <div class="color-dot dot-2" style="bottom: 30%; left: 10%; background: var(--accent-4);"></div>
+  
+  <div class="container">
+    <h2 class="section-title">Education & Experience</h2>
+    <p class="section-subtitle">A journey through my professional development and career milestones</p>
+    
+    <div class="grid-2">
+      <div class="card fade-in">
+        <h3>Diploma in Professional Photography</h3>
+        <p>Grotech Institute of Film Technology</p>
+        <small>2023 – 2024 | Kasaragod, Kerala</small>
+      </div>
+      <div class="card fade-in" style="background: var(--primary-light); border-color: rgba(0, 122, 255, 0.2);">
+        <h3>PK Studio Photography</h3>
+        <p>Photographer & Designer</p>
+        <small>2023 – Present | Bangalore, Karnataka</small>
+      </div>
+    </div>
+
+    <div class="card fade-in" style="margin-top: 1.5rem;">
+      <h3>Professional Experience Highlights</h3>
+      <ul style="margin-top: 1rem;">
+        <li><span class="bullet">•</span>Handled event, portrait, and commercial shoots with strong composition & lighting.</li>
+        <li><span class="bullet">•</span>Expert in Adobe Photoshop, Lightroom, Illustrator & Premiere Pro.</li>
+        <li><span class="bullet">•</span>Blended photography & graphic design for branding and marketing visuals.</li>
+      </ul>
+    </div>
+
+    <div class="grid-2" style="margin-top: 1.5rem;">
+      <div class="card fade-in">
+        <h3>Digital Sign, Complete Digital Solution</h3>
+        <p><small>2020 – 2022 | Thrikkaripur, Kasaragod</small></p>
+        <ul style="margin-top: 0.75rem;">
+          <li><span class="bullet">•</span>Freelance photography for local clients and events.</li>
+          <li><span class="bullet">•</span>Post-processing with Lightroom & Photoshop.</li>
+        </ul>
+      </div>
+      <div class="card fade-in">
+        <h3>Chithranjali Digital & Modeling Studio</h3>
+        <p><small>2019 – 2020 | Payyanur, Kannur</small></p>
+        <ul style="margin-top: 0.75rem;">
+          <li><span class="bullet">•</span>Captured high-quality event and model photos.</li>
+          <li><span class="bullet">•</span>Delivered retouched visuals with Adobe Creative Suite.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="work" style="background: var(--background-alt);">
+  <div class="color-dot dot-1" style="top: 10%; right: 5%; background: var(--accent-1);"></div>
+  <div class="color-dot dot-3" style="bottom: 20%; left: 5%; background: var(--accent-2);"></div>
+  
+  <div class="container">
+    <h2 class="section-title">My Work</h2>
+    <p class="section-subtitle">A selection of my photography and design projects</p>
+    
+    <div class="gallery">
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762945471/WORK0_dymcxw.jpg" alt="Work sample 1">
+      </div>
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762945472/WORK1_ozdxd5.jpg" alt="Work sample 2">
+      </div>
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762945473/WORK2_kdc7r0.jpg" alt="Work sample 3">
+      </div>
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762945468/WORK4_s8tsxx.jpg" alt="Work sample 4">
+      </div>
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762945468/WORK5_cosq9f.jpg" alt="Work sample 5">
+      </div>
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762945469/WORK6_up4bup.jpg" alt="Work sample 6">
+      </div>
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762945469/WORK7_yewtd9.jpg" alt="Work sample 7">
+      </div>
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762944502/work5_nmdyl8.jpg" alt="Work sample 8">
+      </div>
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762944508/work10_cvyegc.jpg" alt="Work sample 9">
+      </div>
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762944508/work12_vzdlsb.jpg" alt="Work sample 10">
+      </div>
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762944509/work11_zco6kc.jpg" alt="Work sample 11">
+      </div>
+
+      <div class="gallery-item fade-in">
+        <img src="https://res.cloudinary.com/dcmxcdtd4/image/upload/v1762944512/work2_j38cuc.jpg" alt="Work sample 12">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="skills">
+  <div class="color-dot dot-2" style="top: 10%; left: 10%; background: var(--accent-4);"></div>
+  <div class="color-dot dot-3" style="bottom: 10%; right: 10%; background: var(--accent-3);"></div>
+  
+  <div class="container">
+    <h2 class="section-title">Skills & Languages</h2>
+    <p class="section-subtitle">Technical expertise and language proficiency</p>
+    <div class="grid-2">
+      <div class="card fade-in">
+        <h3>Professional Skills</h3>
+        <ul class="skill-list" style="margin-top: 1rem;">
+          <li>Photography Techniques (Digital & Film)</li>
+          <li>Lighting & Composition</li>
+          <li>Photo & Video Editing (Photoshop, Lightroom, Premiere)</li>
+          <li>Client Relationship & Project Management</li>
+          <li>Camera Operation (DSLR, Mirrorless)</li>
+        </ul>
+      </div>
+      <div class="card fade-in">
+        <h3>Languages</h3>
+        <div style="margin-top: 1rem;">
+          <div class="language-item">
+            <strong>Malayalam</strong>
+            <div class="dots">
+              <div class="dot filled"></div>
+              <div class="dot filled"></div>
+              <div class="dot filled"></div>
+              <div class="dot filled"></div>
+              <div class="dot filled"></div>
+            </div>
+          </div>
+          <div class="language-item">
+            <strong>English</strong>
+            <div class="dots">
+              <div class="dot filled"></div>
+              <div class="dot filled"></div>
+              <div class="dot filled"></div>
+              <div class="dot filled"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="language-item">
+            <strong>Kannada</strong>
+            <div class="dots">
+              <div class="dot filled"></div>
+              <div class="dot filled"></div>
+              <div class="dot filled"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background: linear-gradient(135deg, #f0f7ff 0%, #f9f0ff 100%);">
+  <div class="color-dot dot-1 floating" style="top: 20%; left: 10%; background: var(--accent-2);"></div>
+  <div class="color-dot dot-2 floating" style="bottom: 20%; right: 10%; background: var(--accent-1); animation-delay: 1.5s;"></div>
+  
+  <div class="container" style="text-align: center;">
+    <h2 class="section-title">Let's Work Together</h2>
+    <p class="section-subtitle">Available for freelance shoots, branding projects & collaborations</p>
+    <button class="btn fade-in">Contact Me</button>
+  </div>
+</section>
+
+<section style="padding: 3rem 0; position: relative;">
+  <div class="color-dot dot-3" style="top: 10%; right: 20%; background: var(--accent-4);"></div>
+  
+  <div class="container" style="text-align: center;">
+    <h3 style="margin-bottom: 1rem; font-weight: 600;">Declaration</h3>
+    <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+      I hereby declare that the information provided is true to the best of my knowledge and belief.
+    </p>
+    <p style="margin-top: 1.5rem; font-weight: 600;">Yedhun K P</p>
+  </div>
+</section>
+
+<footer>
+  © 2025 Yedhun K P | Photographer & Graphic Designer
+</footer>
+
+<script>
+  // Fade in elements on scroll
+  const fadeElements = document.querySelectorAll('.fade-in');
+  
+  const fadeInOnScroll = () => {
+    fadeElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementVisible = 150;
+      
+      if (elementTop < window.innerHeight - elementVisible) {
+        element.style.opacity = "1";
+        element.style.transform = "translateY(0)";
+      }
+    });
+  };
+  
+  // Set initial state
+  window.addEventListener('DOMContentLoaded', () => {
+    fadeElements.forEach(el => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(20px)";
+      el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+    });
+    
+    fadeInOnScroll();
+  });
+  
+  window.addEventListener('scroll', fadeInOnScroll);
+  
+  // Smooth scroll for navigation links
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      window.scrollTo({
+        top: targetElement.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    });
+  });
+  
+  // Contact button functionality
+  document.querySelector('.btn').addEventListener('click', function() {
+    const email = 'yedhunkp@gmail.com';
+    const subject = 'Project Inquiry';
+    const body = 'Hello Yedhun, I would like to discuss a potential project with you.';
+    
+    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+
+</body>
+</html>
